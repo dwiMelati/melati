@@ -1,0 +1,176 @@
+/************** CSS *************  */
+/* Reset margin, padding, dan box-sizing untuk semua elemen, serta set font default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../image/login.jpg); /* Set gambar latar belakang untuk halaman login */
+  height: 100vh;
+  overflow: hidden;
+}
+
+/************** LOGIN*************  */
+/* Gaya untuk container login, termasuk posisi, ukuran, dan efek bayangan */
+.center {
+  position: absolute;
+  border: 1px solid white;
+  top: 40%;
+  left: 50%;
+  margin-top: 65px;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  width: 400px;
+  background-color: #ffa2ec47;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px fuchsia;
+}
+
+/* Gaya untuk judul dalam container login */
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ffa2ec;
+  color: fuchsia;
+}
+
+/* Gaya untuk form login */
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Gaya untuk field teks dalam form login */
+form .txt-field {
+  position: relative;
+  border-bottom: 2px solid fuchsia;
+  margin: 30px 0;
+}
+
+/* Gaya untuk input field dalam .txt-field */
+.txt-field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Gaya untuk label di atas input field */
+.txt-field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: fuchsia;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+/* Gaya untuk label ketika input field difokuskan atau valid */
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label {
+  top: -7px;
+  color: fuchsia;
+}
+
+/* Gaya untuk input teks dan password */
+input[type="text"],
+input[type="password"] {
+  color: fuchsia;
+}
+/* Gaya untuk input teks dan password saat hover */
+input[type="text"]:hover,
+input[type="password"]:hover {
+  background-color: #f4a0e352;
+}
+
+/* Gaya untuk tombol submit */
+input[type="submit"] {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  background-color: #ffa2ec;
+  border-radius: 25px;
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  outline: none;
+  margin-top: 10px;
+}
+
+/* Gaya untuk teks password */
+.pass {
+  color: fuchsia;
+  font-size: 13px;
+}
+
+/* Gaya untuk link signup */
+.signup-link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: fuchsia;
+}
+
+/* link signup saat hover */
+.signup-link a {
+  color: fuchsia;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* footer pada halaman login */
+.footer-log {
+  position: absolute;
+  border: 1px solid #ffa2ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffa2ec;
+  padding: 10px;
+  width: 100%;
+  bottom: 0;
+}
+
+/* teks dalam footer */
+.footer-log p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 12px;
+  color: white;
+}
+
+/* ====================== RESPONSIVE BREAKPOINTS ====================== */
+/* Gaya untuk tampilan pada perangkat dengan lebar maksimum 767px */
+@media screen and (max-width: 767px) {
+  .center {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Gaya untuk tampilan pada perangkat dengan lebar minimum 768px */
+@media screen and (min-width: 768px) {
+  .center {
+    top: 20%;
+    left: 50%;
+    margin-top: 40px;
+    transform: translateX(-50%);
+    width: 400px;
+  }
+}

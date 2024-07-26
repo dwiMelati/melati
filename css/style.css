@@ -1,0 +1,849 @@
+/* *********====== STYLE CSS  *********======  */
+:root{
+    --header-height: 3.5rem;
+
+    /* ********* Colors ********* */
+
+    --text-color: hsl(0, 100%, 99%);
+    --container-color:  #ffa2ec;
+
+    
+    /* ********* Font ********* */
+    --one-font:'Didot', serif;
+    --biggest-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+
+    /* ********* Font Weight ********* */
+    --font-medium: 500;
+    --font: 600;
+
+    /* ********* z index ********* */
+    --z-fixed: 100;
+
+}
+
+/* ********* Responsive typography ********* */
+@media screen and (min-width: 1152px) {
+    :root{
+        --biggest-font-size: 5.5rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: .813rem;
+    }
+    
+}
+
+/* ********* Aturan dasar Css untuk semua elemen ********* */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Mengatur perilaku scroll halaman */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Mengatur gaya dasar untuk body, termasuk font, ukuran font, warna teks, dan warna latar belakang */
+body{
+    font-family: var(--one-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    background-color: rgb(249, 202, 210);
+
+}
+
+/* Mengatur gaya untuk elemen heading */
+h1,h2,h3{
+    color: var(--title-color);
+    font-family: var(--one-font);
+    font-weight: var(--font);
+}
+
+/* Menghilangkan bullet points dari list */
+ul{
+    list-style: none;
+}
+
+/* Menghilangkan underline dari tautan */
+a{
+    text-decoration: none;
+}
+
+/* Menyesuaikan gaya gambar agar responsif */
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ********** Kelas-kelas CSS yang dapat digunakan kembali ********** */
+//Membuat Layout Responsif
+#container{
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/* untuk mengatur tata letak elemen-elemen  */
+#grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* digunakan untuk membuat sebuah bagian atau seksi dalam halaman dengan padding untuk jarak. */
+.section{
+    padding-block: 5rem 1rem;
+}
+
+/* untuk men-style judul bagian dengan penjajaran tengah, ukuran font variabel, dan jarak bawah */
+.section-title{
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: 1.5rem;
+}
+
+/* untuk mencegah konten meluap keluar dari batas elemen */
+.main{
+    overflow: hidden;
+}
+
+/* ********* Mengatur gaya untuk header dan navigasi ********* */
+/* Mengatur posisi tetap dan gaya untuk header */
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: #ffa2ec;
+    box-shadow: 1px 1px 2px #ffa2ec;
+
+}
+
+/* Mengatur gaya untuk navigasi */
+.nav{
+    /* width: 100% */
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Gaya untuk logo navigasi */
+.nav-logo{
+    /* width: 100%; */
+    color: white ;
+    font-family: var(--one-font);
+    font-weight: var(--font);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px #ff00cc;
+}
+
+/* Gaya untuk tombol navigasi */
+.nav-toggle{
+    display: flex;
+    font-size: 1.25rem;
+    color:  rgb(249, 202, 210);
+    cursor: pointer;
+}
+/* Gaya untuk navigasi close button  */
+.nav-close{
+    color: var(--title-color);
+}
+    
+/* Gaya untuk header yang sticky  */
+.header.sticky{
+    background-color: var(--container-color);
+}
+
+/* Mengatur navigasi untuk perangkat mobile */
+@media screen  and (max-width: 1023px){
+    .nav-menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding-block: 4rem;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px); 
+        transition: top .4s;
+
+    }
+}
+
+/* Mengatur gaya untuk daftar navigasi */
+.nav-list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+
+}
+
+/* Mengatur gaya untuk tautan navigasi */
+.nav-link{
+    position: relative;
+    color:#ffff;
+    text-shadow: 2px 2px 4px #ff00cc;
+}
+
+/* Efek hover untuk tautan navigasi */
+.nav-link::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+}
+.nav-link:hover::before{
+    width: 100%;
+}
+
+.nav-link:hover::after{
+    width: 70%;
+}
+
+/* Mengatur posisi close button untuk navigasi */
+.nav-close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+/* ********* Menampilkan menu ********* */
+/* untuk mengatur posisi suatu elemen di dalam halaman web */
+.show-menu{
+    top: 0;
+}
+
+/* ********* menambah efek blur pada header ********* */
+/* untuk menambahkan sebuah elemen semu (pseudo-element) setelah elemen dengan kelas */
+.blur-header::after{
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    
+}
+/* untuk mengatur tampilan konten di dalam sebuah elemen */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+/* untuk mengatur tampilan gambar di dalam elemen dengan kelas  */
+.content img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+/* ********* Home ********* */
+/* Mengatur gaya untuk elemen home */
+#home{
+    position: relative;
+}
+
+/* Mengatur posisi background untuk elemen home */
+.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+ } 
+
+.home-container{
+    position: relative;
+    padding-top: 3rem;
+    row-gap: 3rem;
+
+}
+
+.home-data{
+    text-align: center;
+}
+
+.home-subtitle{
+    font-size: var(--h3-font-size);
+    margin-bottom: .5rem;
+}
+
+.home-title{
+    font-size: var(--biggest-font-size);
+    margin-bottom: 1rem;
+}
+
+.home-kata{
+    margin-bottom: .5rem;
+    text-shadow: 2px 2px rgba(255, 0, 255, 0.474);
+}
+.home-description{
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* Mengatur gaya untuk kartu di halaman home  */
+.home-cards {
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  article img{
+    width: 5000px;
+  }
+  
+  .home-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .home-card:hover{
+    background-color: #ff00cc86;
+    border-radius: 20px;
+    transform: scale(1.05);
+
+  }
+  
+  .home-card-img {
+    width: 100%;
+    height: 320px; 
+    object-fit: cover;
+    transition: transform 0.4s;
+    border-radius: 10px; 
+  }
+  
+  .home-card-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .home-card-title {
+    font-size: var(--h3-font-size);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* .home-card-kata */
+  .home-card:hover.home-card-img {
+    transform: scale(1.2);
+  }
+
+/* ********* Mengatur gaya untuk tombol ********* */
+.button{
+    padding: 1.25rem 1.5rem;
+    color: var(--title-color);
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-family: var(--one-font);
+    font-weight: var(--font);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px); 
+  
+}
+
+.button i{
+    font-size: 1.25rem;
+    transition: transform .4s;
+    font-weight: initial;
+}
+
+/* Menambahkan efek hover pada tombol */
+.button:hover{
+    transform: translateX(.25rem);
+}
+
+/* ********* About ********* */
+/* Gaya untuk bagian 'about', termasuk tata letak, skala gambar saat hover, dan posisi */
+.about-container{
+    row-gap: 3rem;
+}
+
+.about-data{
+    text-align: center;
+}
+
+.about-description{
+    margin-bottom: 2rem;
+}
+
+.about-image{
+    position: relative;
+    justify-self: center;
+    overflow: hidden;
+}
+
+.about-img{
+    width: 300px;
+    transition: transform .4s;
+}
+
+.about-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-image:hover .about-img{
+    transform: scale(1.2);
+}
+
+/* ********* populer ********* */
+/* Gaya untuk bagian buku populer, termasuk tata letak, efek hover, dan tampilan modal */
+.book-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+    align-items: center;
+}
+.book-container div{
+    width: 220px;
+    height: 344px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #ff00cc;
+    font-size: 12px;
+    padding: 20px;
+    box-shadow: 1px 1px 2px 2px fuchsia;
+}
+.book-container div:hover{
+    width: 240px;
+    padding: 20px 30px 0px 30px;
+    cursor: pointer;
+}
+.book-container div img{
+    width: 180px;
+    height: 260px;
+    display: flex;
+}
+.book-container div h1{
+    margin-top: 5px;
+    font-size: medium;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+  
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--container-color);
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 300px;
+    max-width: 600px;
+    font-family: var(--one-font);
+    line-height: 1.5;
+    font-size: 17px;
+}
+  
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+#bookDetails h2 {
+    margin-top: 0;
+}
+  
+#bookDetails p {
+    margin-bottom: 10px;
+}
+  
+#bookDetails .author {
+    font-weight: bold;
+}
+  
+/* CSS untuk menampilkan atau menyembunyikan modal */
+.modal.show {
+    display: block;
+}
+  
+.modal.hide {
+    display: none;
+}
+
+#populer-books{
+     width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ********* Footer ********* */
+/* Gaya untuk footer, termasuk tata letak, tautan, ikon media sosial, dan penyesuaian responsif */
+.footer{
+    padding-block: 2.5rem;
+    background-color: var(--container-color);
+}
+
+.footer-container{
+    margin: 15px;
+    padding: 10px;
+}
+
+.footer-content{
+    row-gap: 3.5rem;
+}
+
+.footer-logo{
+    display: inline-block;
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--font);
+    margin-bottom: 1rem;
+}
+
+.footer-data{
+    grid-template-columns: repeat(2, max-content);
+    gap: 2.5rem 3.5rem;
+}
+
+.footer-title{
+    font-size: var(--h3-font-size);
+    margin-bottom: 1rem;
+}
+
+.footer-links{
+    display: grid;
+    row-gap: .75rem;
+}
+
+.footer-link{
+    color: var(--text-color);
+    transition: color .4s;
+}
+
+.footer-link:hover{
+    color: var(--title-color);
+}
+
+.footer-group,
+.footer-social{
+    display: flex;
+}
+
+.footer-group{
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.footer-social{
+    column-gap: 2rem;
+}
+
+.footer-social-link{
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+.footer-social-link:hover{
+    color: var(--title-color);
+    transform: translateY(-.150rem);
+}
+
+.footer-copy{
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    text-align: center;
+}
+.footer-lib{
+    font-family: var(--one-font);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding: 10px;
+    width: 100%;
+    bottom: 0;
+    z-index: var(--z-fixed);
+}
+.footer-lib p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 12px;
+}
+
+/* ********* Scroll Bar ********* */
+/* Gaya untuk scrollbar, termasuk lebar dan radius border */
+::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+}
+
+/* ********* RESPONSIVE BREAKPOINTS ********* */
+/* Gaya untuk berbagai ukuran layar, menyesuaikan tata letak, ukuran font, dan visibilitas sesuai kebutuhan */
+/* for small device */
+ @media screen and (max-width: 340px){
+    #container{
+        margin-inline: 1rem;
+    }
+
+    .footer-data{
+        grid-template-columns: max-content;
+    }
+    .footer-lib{
+        font-size: 10px;
+    }
+    h3{
+        font-size: 12px;
+    }
+    
+
+}
+
+/* for medium device */
+@media screen and (min-width: 576px){
+    .home-container,
+    .about-container{
+        grid-template-columns: 380px;
+        justify-content: center;
+    }
+
+    .footer-data{
+        grid-template-columns: repeat(2, max-content);
+    }
+    .home-cards {
+        grid-template-columns: repeat(2, 220px);
+    }
+
+    
+}
+
+@media screen and (min-width: 768px){
+    .home-cards {
+        grid-template-columns: repeat(3, 220px);
+    }
+
+    .about-container{
+        grid-template-columns: repeat(2, 350px);
+        align-items: center;
+    }
+    .about-container{
+        margin-top: 100px;
+    }
+
+    .footer-content{
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+    }
+
+    .footer-group{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-copy{
+        order: -1;
+    }
+
+}
+
+/* for large device */
+@media screen and (min-width: 1023px){
+    .nav-close,
+    .nav-toggle{
+        display: none;
+    }
+
+    .nav-list{
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+    .home-cards{
+        grid-template-columns: repeat(4, 230px);
+    }
+
+    .footer-data{
+        grid-template-columns: repeat(4, max-content);
+        column-gap: 4.5rem;
+    }
+    
+}
+
+@media screen and (min-width: 1023px) {
+    .nav-close,
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+
+    .home-cards {
+        grid-template-columns: repeat(4, 230px);
+    }
+
+    .footer-data {
+        grid-template-columns: repeat(4, max-content);
+        column-gap: 4.5rem;
+    }
+    
+}
+
+@media screen and (min-width: 1152px) {
+    #container {
+        margin-inline: auto;
+    }
+
+    .section {
+        padding-block: 7rem 2em;
+    }
+    
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .blur-header::after {
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px); 
+    }
+
+    .home-container {
+        grid-template-columns: initial;
+        justify-content: initial;
+        row-gap: 4rem;
+        padding-top: 6.5rem;
+    }
+
+    .home-shadow {
+        height: 980px;
+    }
+
+    .home-data {
+        text-align: initial;
+        width: 480px;
+    }
+
+    .home-description {
+        margin-bottom: 2.5rem;
+    }
+
+    .home-cards {
+        grid-template-columns: repeat(4, 260px);
+    }
+
+    .home-card-title {
+        left: 1.5rem;
+        bottom: 1.5rem;
+    }
+
+    .button {
+        column-gap: 1.5rem;
+    }
+
+    .about-container {
+        grid-template-columns: 400px 460px;
+        column-gap: 8.5rem;
+        padding-block: 1rem;
+    }
+
+    .about-description {
+        margin-bottom: 3rem;
+    }
+
+    .about-img {
+        width: 460px;
+    }
+    
+    .modal-content {
+        max-height: 400px;
+        max-width: 750px;
+        font-size: 18px;
+    }
+
+    .footer {
+        padding-block: 5rem 3rem;
+    }
+
+    .footer-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-group {
+        margin-top: 7rem;
+    }
+
+    .footer-social {
+        column-gap: 2rem;
+    }
+
+    .footer-social-link {
+        font-size: 1.5rem;
+    }
+    
+}

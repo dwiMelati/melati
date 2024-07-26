@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- **************************** FAVICON  **************************** -->
+  <title>Library</title>
+  <!-- **************************** ICON  **************************** -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- **************************** CSS  **************************** -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+</head>
+
+<body>
+  <!-- **************************** HEADER **************************** -->
+  <header class="header" id="header">
+    <nav class="nav" id="container">
+      <a href="#" class="nav-logo">
+        <div>WPvel:></div>
+      </a>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#rek" class="nav-link">REKOMENDASI</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#favorite" class="nav-link">FAVORIT</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="library.html" class="nav-link">LIBRARY</a>
+          </li>
+
+        </ul>
+        <!-- ======== Close button  ======== -->
+        <div class="nav-close" id="nav-close">
+          <i class="bx bx-x"></i>
+        </div>
+      </div>
+      <!-- ======== tanggle button  ======== -->
+      <div class="nav-toggle" id="nav-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- **************************** MAIN  **************************** -->
+  <main class="main">
+    <section class="section" id="favorite">
+      <h2 class="section-title" id="-books">Favorite</h2>
+      <div class=""></div>
+      <div class="book-container" id="book-container"></div>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <span class="close" id="modalClose">&times;</span>
+          <div id="bookDetails">
+            <h2></h2>
+            <p>Authors:</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section" id="rek">
+      <h2 class="section-title" id="-books">Rekomendasi</h2>
+      <div class=""></div>
+      <div class="book-container" id="book-containerr"></div>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <span class="close" id="modalClose">&times;</span>
+          <div id="bookDetails">
+            <h2></h2>
+            <p class="author">Authors:</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- **************************** FOOTER  **************************** -->
+  <footer class="footer" id="container">
+    <div class="footer-container" id="grid">
+      <div class="footer-content" id="grid">
+        <div>
+          <a href="#" class="footer-logo">WPvel:></a>
+          <p class="footer-description">
+            Makasi sudah berkunjung di WPvel:>
+            <br />
+            Semoga anda nyaman dengan fitur kami
+          </p>
+        </div>
+        <div class="footer-data" id="grid">
+          <div>
+            <h3 class="footer-title">Developers</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" class="footer-link">Api documentation</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Wattpad</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Projek</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">CONTACTS</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" class="footer-link">Translator & Editors</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">History</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Audio business</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Genre</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" class="footer-link">Misteri</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">fantasi</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">romansa</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">Setting</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" class="footer-link">Dunia Fantasi</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Fiksi</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Hayalan</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-group">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer-social-link">
+            <i class="bx bxl-facebook-circle"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="footer-social-link">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" class="footer-social-link">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="https://www.whatsapp.com/?" target="_blank" class="footer-social-link">
+            <i class="bx bxl-whatsapp"></i>
+          </a>
+        </div>
+        <span class="footer-copy">Copyright 2024 melati sikumbang. WPvel:> </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- **************************** MENGHUBUNGKAN KE JAVASCRIPT  **************************** -->
+  <script src="../javascript/script.js"></script>
+  <script src="../javascript/books.js"></script>
+</body>
+
+</html>
